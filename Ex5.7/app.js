@@ -5,12 +5,12 @@
 
 const getShortest = (str) => {
   let splitted = str.split(' ');
-  let res = '';
+  let shortest = [];
   for (let i = 0; i < splitted.length; i++) {
-    if (splitted[i].length < splitted[i].length) {
-      res = splitted[i];
+    if(splitted[i].length > shortest){
+      shortest = splitted[i]
     }
   }
-  return res
+  return shortest
 }
 console.log(getShortest("get me the shortest word"));
