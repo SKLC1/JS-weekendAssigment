@@ -13,4 +13,16 @@
 // >= 0. So the return integer can't be negative. 
 // The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 
-
+const peopleOnTheBus = (stopsArr) => {
+  let bus = 0;
+  for (let i = 0; i < stopsArr.length; i++) {
+    bus = bus + stopsArr[i][0] - stopsArr[i][1]
+  }
+  if(bus >= 0){
+  return bus
+  } else {
+    return 'it dont add up'
+  }
+}
+console.log(peopleOnTheBus([[3, 2],[5, 2],[1, 3],[0, 2],[6, 6],])); //expecting 0
+console.log(peopleOnTheBus([[3, 2],[5, 2],[1, 3],[0, 2],[6, 7],]));//expecting 'it dont add up'
